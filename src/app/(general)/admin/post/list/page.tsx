@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import { DeletePostButton } from "./delete-post-button";
 import { fetch } from "~/modules/fetch";
+import dayjs from "dayjs";
 
 export default async function AdminPosts() {
   const posts = await fetch({
@@ -51,7 +52,7 @@ export default async function AdminPosts() {
                 </p>
                 <div className="flex justify-between text-muted-foreground font-semibold text-sm">
                   <span>Por {post.author?.fullName}</span>
-                  <span>Em {post.createdAt.toLocaleString()}</span>
+                  <span>Em {dayjs(post.createdAt).format('DD/MM/YY HH:mm')}</span>
                 </div>
               </div>
             )

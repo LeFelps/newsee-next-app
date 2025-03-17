@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { fetch } from "~/modules/fetch";
+import dayjs from "dayjs";
 
 export default async function Home() {
   const posts = await fetch({
@@ -33,7 +34,7 @@ export default async function Home() {
                     </p>
                     <div className="flex justify-between text-muted-foreground font-semibold text-sm">
                       <span>Por {post.author?.fullName}</span>
-                      <span>Em {post.createdAt.toLocaleString()}</span>
+                      <span>Em {dayjs(post.createdAt).format('D/MM/YY HH:mm')}</span>
                     </div>
                   </div>
                 </Link>

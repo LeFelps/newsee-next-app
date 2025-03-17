@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { LucideArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { fetch } from "~/modules/fetch";
@@ -32,7 +33,7 @@ export default async function Post({
               <p className="text-xl font-bold">{post.content}</p>
               <div className="mt-4 flex justify-between text-sm text-gray-500 font-bold">
                 <span>Por {post.author?.fullName}</span>
-                <span>em {post.createdAt}</span>
+                <span>em {dayjs(post.createdAt).format('DD/MM/YY HH:mm')}</span>
               </div>
             </div>
           </div>
