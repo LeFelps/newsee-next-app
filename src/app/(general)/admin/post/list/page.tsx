@@ -10,6 +10,8 @@ export default async function AdminPosts() {
     url: "/posts",
   });
 
+  console.log(posts)
+
   return (
     <div className="w-full flex flex-grow justify-center">
       <div className="container p-6">
@@ -48,7 +50,7 @@ export default async function AdminPosts() {
                   {post.content}
                 </p>
                 <div className="flex justify-between text-muted-foreground font-semibold text-sm">
-                  <span>Por Professor Tal</span>
+                  <span>Por {post.author?.fullName}</span>
                   <span>Em {post.createdAt.toLocaleString()}</span>
                 </div>
               </div>

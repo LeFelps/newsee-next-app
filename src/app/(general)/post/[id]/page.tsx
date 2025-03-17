@@ -31,7 +31,7 @@ export default async function Post({
             <div className="border-x border-b rounded-b-lg border-gray-200 p-5 space-y-4">
               <p className="text-xl font-bold">{post.content}</p>
               <div className="mt-4 flex justify-between text-sm text-gray-500 font-bold">
-                <span>Por professor tal</span>
+                <span>Por {post.author?.fullName}</span>
                 <span>em {post.createdAt}</span>
               </div>
             </div>

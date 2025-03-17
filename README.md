@@ -1,7 +1,6 @@
 # Projeto Newsee Fiap Blog
 
 TODO
-- [ ] Author name field
 - [ ] Delete refresh list
 - [ ] Toasts
 

@@ -32,7 +32,7 @@ export default async function Home() {
                       {post.content}
                     </p>
                     <div className="flex justify-between text-muted-foreground font-semibold text-sm">
-                      <span>Por Professor Tal</span>
+                      <span>Por {post.author?.fullName}</span>
                       <span>Em {post.createdAt.toLocaleString()}</span>
                     </div>
                   </div>
