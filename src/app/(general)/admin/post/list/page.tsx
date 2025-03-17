@@ -11,8 +11,6 @@ export default async function AdminPosts() {
     url: "/posts",
   });
 
-  console.log(posts)
-
   return (
     <div className="w-full flex flex-grow justify-center">
       <div className="container p-6">

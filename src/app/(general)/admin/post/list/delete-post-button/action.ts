@@ -10,5 +10,5 @@ export const deletePost = async (id: string) => {
     headers: { "Content-Type": undefined },
   });
 
-  return revalidatePath("/admin/post/list");
+  revalidatePath("/admin/post/list");
 };

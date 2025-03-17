@@ -5,10 +5,12 @@ import { redirect } from "next/navigation";
 import { fetch } from "~/modules/fetch";
 
 export default async function EditPost({
-  params: { id },
+  params
 }: {
   params: { id: string };
 }) {
+  const { id } = await params
+
   const post = (
     await fetch({
       method: "GET",
