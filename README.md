@@ -1,43 +1,92 @@
+# Projeto Newsee Fiap Blog
 
-## TODO
+TODO
 - [ ] Author name field
 - [ ] Delete refresh list
 - [ ] Toasts
-- [ ] README
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**Índice**
 
-## Getting Started
+- [Projeto Newsee Fiap Blog](#projeto-newsee-fiap-blog)
+  - [Arquitetura da Aplicação](#arquitetura-da-aplicação)
+    - [/app](#app)
+    - [/components](#components)
+    - [/interfaces](#interfaces)
+    - [/lib](#lib)
+    - [/modules](#modules)
+  - [Instalação e configuração](#instalação-e-configuração)
+    - [Instalação de dependências](#instalação-de-dependências)
+    - [Configurar variáveis de ambiente](#configurar-variáveis-de-ambiente)
+    - [Inicialização do projeto](#inicialização-do-projeto)
+  - [Tecnologias utilizadas](#tecnologias-utilizadas)
+    - [Framework](#framework)
+    - [Autenticação](#autenticação)
+    - [API](#api)
+    - [UI](#ui)
+  - [Autores](#autores)
 
-First, run the development server:
+## Arquitetura da Aplicação
+
+### /app
+Este diretório contém a aplicação Next.js, que é responsável por renderizar o frontend da aplicação.
+
+- **(auth)** - contém as rotas de autenticação
+- **(general)** - contém as rotas gerais (após autenticação)
+
+### /components
+Este diretório contém os componentes reutilizáveis da aplicação.
+
+- **ui** - contém os componentes de interface (gerados utilizando shadcn/ui)
+
+### /interfaces
+Este diretório é responsável por realizar a comunicação do frontend com ferramentas externas, por enquanto, apenas com a nossa API.
+
+- **auth** - funções de autenticação
+
+### /lib
+Este diretório contém funções utilitárias que poderiam ser reutilizadas em outros projetos.
+
+### /modules
+Este diretório contém as funções que são responsáveis por realizar as chamadas à API.
+
+- **auth** - funções de autenticação (configuração do next-auth)
+
+## Instalação e configuração
+
+### Instalação de dependências
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Configurar variáveis de ambiente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Seguir exemplo demonstrado em `.env.example`, criando um arquivo `.env` na raiz do projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Inicialização do projeto
 
-## Learn More
+```bash
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Tecnologias utilizadas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Framework
+Para o desenvolvimento do frontend, utilizamos o framework [Next.js](https://nextjs.org/), que é baseado em [React](https://reactjs.org/).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Autenticação
+Para a autenticação, utilizamos o [next-auth](https://next-auth.js.org/), que fornece uma solução pronta para autenticação em aplicações Next.js.
 
-## Deploy on Vercel
+### API
+A API utilizada utilizamos a [Newsee Fastify API](https://github.com/andrebeolchi/newsee-fastify-api), que é responsável por fornecer os dados para o frontend.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Utilizamos o [axios](https://axios-http.com/) para realizar as requests.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### UI
+Para a estilização do frontend, utilizamos [Tailwind CSS](https://tailwindcss.com/) e [shadcn/ui](https://ui.shadcn.com/), que fornece componentes prontos para serem utilizados.
+
+## Autores
+
+<img src="https://avatars.githubusercontent.com/u/61586777" width="16" height="16"> [André Beolchi](https://github.com/andrebeolchi) (RM 359648)
+<br><img src="https://avatars.githubusercontent.com/u/34667580" width="16" height="16"> [Fellipe Corominas](https://github.com/LeFelps) (RM 359677)
+
