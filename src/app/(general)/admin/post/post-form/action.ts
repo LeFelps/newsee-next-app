@@ -2,8 +2,17 @@
 
 import { fetch } from "~/modules/fetch";
 
-export const savePost = async (formData: FormData) => {
-  const id = formData.get("id");
+export const savePost = async (
+  state: {
+    title: string;
+    content: string;
+    id: string;
+    message?: undefined;
+  },
+  formData: FormData
+) => {
+  const id = state?.id;
+
   const data = {
     title: formData.get("title"),
     content: formData.get("content"),
@@ -18,7 +27,11 @@ export const savePost = async (formData: FormData) => {
       data,
     });
 
-    return response.data;
+    return {
+      title: response.data.title,
+      content: response.data.content,
+      id: response.data.id,
+    };
   } catch (error) {
     console.log({ error });
     return {

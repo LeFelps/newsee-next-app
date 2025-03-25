@@ -6,7 +6,6 @@ import { Input } from "~/components/ui/input";
 import { Textarea } from "~/components/ui/textarea";
 import { useActionState } from "react";
 import { savePost } from "./action";
-import { redirect } from "next/navigation";
 
 export function PostForm({
   className,
@@ -19,15 +18,7 @@ export function PostForm({
     content: string;
   };
 }) {
-  const submitForm = async (initialFormData: FormData, formData: FormData) => {
-    const postData = await savePost(formData);
-
-    if (!post?.id) redirect(`/admin/post/edit/${postData.id}`);
-
-    return post;
-  };
-
-  const [, formAction, pending] = useActionState(submitForm, {
+  const [state, formAction, pending] = useActionState(savePost, {
     ...post,
   });
 
@@ -39,14 +30,14 @@ export function PostForm({
           type="text"
           placeholder="Título"
           disabled={pending}
-          defaultValue={post?.title}
+          defaultValue={state.title}
         />
         <Textarea
           name="content"
           placeholder="Digite aqui o conteúdo do post"
           className="h-40"
           disabled={pending}
-          defaultValue={post?.content}
+          defaultValue={state.content}
         />
         <div className="flex w-full justify-end">
           <Button type="submit" disabled={pending}>
