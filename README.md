@@ -1,9 +1,5 @@
 # Projeto Newsee Fiap Blog
 
-TODO
-- [ ] Delete refresh list
-- [ ] Toasts
-
 **Índice**
 
 - [Projeto Newsee Fiap Blog](#projeto-newsee-fiap-blog)
